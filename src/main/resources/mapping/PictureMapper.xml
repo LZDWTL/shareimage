@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.shareimage.mapper.PictureMapper">
+
+    <insert id="savePicture">
+        <selectKey keyProperty="pictureid" resultType="int" order="BEFORE">
+            select nvl(max(pictureId),0)+1 from t_picture
+        </selectKey>
+        insert into t_picture(pictureid,picture,userid) values(#{pictureId},#{picture},#{userId})
+    </insert>
+
+</mapper>
