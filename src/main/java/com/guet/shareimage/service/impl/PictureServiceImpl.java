@@ -27,11 +27,11 @@ public class PictureServiceImpl implements PictureService {
     public RespBean savePicture(byte[] binaryPicture) {
 //        String username="";
 ////        int userId =userMapper.findUser(token);  //怎么通过token去确定用户id   ？
-        int result=pictureMapper.savePicture(binaryPicture,userId);
+//        int result=pictureMapper.savePicture(binaryPicture,userId);
 
-        if (result!=1){
-            System.out.println("插入错误");
-        }
+//        if (result!=1){
+//            System.out.println("插入错误");
+//        }
         return new RespBean(RespBeanEnum.SUCCESS);
     }
 }
