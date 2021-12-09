@@ -1,5 +1,6 @@
 package com.guet.shareimage.service.impl;
 
+import com.guet.shareimage.exception.ServicesException;
 import com.guet.shareimage.mapper.PictureMapper;
 import com.guet.shareimage.mapper.UserMapper;
 import com.guet.shareimage.response.RespBean;
@@ -27,11 +28,13 @@ public class PictureServiceImpl implements PictureService {
     public RespBean savePicture(byte[] binaryPicture) {
 //        String username="";
 ////        int userId =userMapper.findUser(token);  //怎么通过token去确定用户id   ？
-//        int result=pictureMapper.savePicture(binaryPicture,userId);
+        int userId = 3;
+        int result = pictureMapper.savePicture(binaryPicture, userId);
 
-//        if (result!=1){
-//            System.out.println("插入错误");
-//        }
+        if (result != 1) {
+//            System.out.println("数据库插入错误");
+            throw new ServicesException(RespBeanEnum.PICTURE_UPLOAD_FAILED);
+        }
         return new RespBean(RespBeanEnum.SUCCESS);
     }
 }

@@ -68,7 +68,7 @@ public class PictureController {
             }
             System.arraycopy(byteList.get(i), 0, bytes, position, byteList.get(i).length);
         }
-        System.out.println(Arrays.toString(bytes));
+//        System.out.println(Arrays.toString(bytes));
 //        String baseStr = Base64.getEncoder().encodeToString(bytes);
 //        byte[] op = Base64.getDecoder().decode(baseStr);
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.shareimage.mapper.LikeMapper">
+
+
+    <insert id="saveLike" parameterType="com.guet.shareimage.bean.pojo.Like">
+        <selectKey keyProperty="likeid" resultType="int" order="BEFORE">
+            select nvl(max(likeid),0)+1 from t_like
+        </selectKey>
+        insert into t_like(likeid,pictureid,userid) values(#{likeid},#{pictureId},#{userId})
+    </insert>
+
+</mapper>
