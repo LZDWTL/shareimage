@@ -17,6 +17,11 @@ public enum RespBeanEnum implements CommonResp{
     USER_ACOUNT_NOT_EXISTED(1003,"用户名不存在"),
     USER_PASSWORD_ERROR(1004,"密码错误"),
 
+
+
+    /** 20XX 表示服务器错误 */
+    PICTURE_UPLOAD_FAILED(2001,"上传图片失败"),
+    GIVE_LIKE_FAILED(2002,"点赞失败"),
     ;
 
     private Integer code;

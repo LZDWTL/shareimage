@@ -2,6 +2,7 @@ package com.guet.shareimage.mapper;
 
 import com.guet.shareimage.bean.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 
 /**
